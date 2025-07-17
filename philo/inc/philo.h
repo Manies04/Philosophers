@@ -6,28 +6,31 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 00:54:51 by tiade-al          #+#    #+#             */
-/*   Updated: 2025/07/16 18:46:43 by tiade-al         ###   ########.fr       */
+/*   Updated: 2025/07/17 17:48:19 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <limits.h>
-#include <stdbool.h>
-#include <pthread.h>
-#include <sys/time.h>
+#ifndef PHILO_H
+# define PHILO_H
 
-#define INFINITE_MEALS -1
-#define INVALID_MAX_MEALS -2
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <limits.h>
+# include <stdbool.h>
+# include <pthread.h>
+# include <sys/time.h>
 
-#define RED		"\033[31m"
-#define GRN		"\033[32m"
-#define MGT		"\033[35m"
-#define CYN		"\033[36m"
-#define RST		"\033[0m"
-#define BLU		"\033[34m"
-#define WHT		"\033[37m"
+# define INFINITE_MEALS -1
+# define INVALID_MAX_MEALS -2
+
+# define RED		"\033[31m"
+# define GRN		"\033[32m"
+# define MGT		"\033[35m"
+# define CYN		"\033[36m"
+# define RST		"\033[0m"
+# define BLU		"\033[34m"
+# define WHT		"\033[37m"
 
 typedef pthread_mutex_t	t_mutex;
 
@@ -114,3 +117,5 @@ void	print_status(t_philo *philo, t_status status);
 void	clean(t_table *table);
 int		error_free(char	*error_message, t_table *table);
 bool	all_threads_running(t_mutex *mutex, long *nbr_thrds, long total_philos);
+
+#endif
