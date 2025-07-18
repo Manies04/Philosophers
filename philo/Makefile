@@ -6,7 +6,7 @@
 #    By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/25 12:58:33 by tiade-al          #+#    #+#              #
-#    Updated: 2025/07/15 23:23:59 by tiade-al         ###   ########.fr        #
+#    Updated: 2025/07/18 10:53:55 by tiade-al         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ OBJ = $(SRCS:srcs/%.c=objs/%.o)
 
 # Compiler and flags
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror #-pthread -g .... -fsanitize=address
 
 # Default target
 all: $(NAME)
@@ -45,13 +45,13 @@ all: $(NAME)
 # Link executable
 $(NAME): $(OBJ)
 	@echo "$(YELLOW)[ LINKING ]$(RESET) Linking $(NAME)..."
-	@$(CC) $(OBJ) -o $(NAME)
+	@$(CC) $(OBJ) $(CFLAGS) -o $(NAME)
 	@echo "$(GREEN)[ OK ]$(RESET) $(NAME) linked."
 	@echo "$(GREEN)[ SUCCESS ]$(RESET) $(NAME) built successfully!"
 
 # Compile source files
 objs/%.o: srcs/%.c
-	@mkdir -p $(@D)
+	@mkdir -p objs
 	@echo "$(CYAN)[ COMPILING ]$(RESET) $< -> $@"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
