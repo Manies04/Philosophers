@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 22:48:33 by tiade-al          #+#    #+#             */
-/*   Updated: 2025/07/16 17:59:34 by tiade-al         ###   ########.fr       */
+/*   Updated: 2025/07/21 15:13:26 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 void	wait_for_threads(t_table *table)
 {
 	while (!get_bool(&table->table_mutex, &table->all_threads_created))
-		;
+		usleep(30);
 }
 
 /** @brief Desynchronizes philosophers to prevent deadlock.

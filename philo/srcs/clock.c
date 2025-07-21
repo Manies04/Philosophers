@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 23:38:59 by tiade-al          #+#    #+#             */
-/*   Updated: 2025/07/16 17:35:57 by tiade-al         ###   ########.fr       */
+/*   Updated: 2025/07/21 15:14:32 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,6 @@ void	precise_usleep(long usleep_time, t_table *table)
 			usleep(remaining / 2);
 		else
 			while ((get_time(MICROSECONDS) - start) < usleep_time)
-				;
+				usleep(30);
 	}
 }

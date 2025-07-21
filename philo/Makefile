@@ -6,7 +6,7 @@
 #    By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/25 12:58:33 by tiade-al          #+#    #+#              #
-#    Updated: 2025/07/18 11:15:49 by tiade-al         ###   ########.fr        #
+#    Updated: 2025/07/21 15:11:54 by tiade-al         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ OBJ = $(SRCS:srcs/%.c=objs/%.o)
 
 # Compiler and flags
 CC = cc
-CFLAGS = -pthread -g -Wall -Wextra -Werror -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror #-pthread -g .... -fsanitize=address
 
 # Default target
 all: $(NAME)

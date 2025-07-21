@@ -6,7 +6,7 @@
 /*   By: tiade-al <tiade-al@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 16:56:04 by tiade-al          #+#    #+#             */
-/*   Updated: 2025/07/16 17:57:52 by tiade-al         ###   ########.fr       */
+/*   Updated: 2025/07/21 15:16:42 by tiade-al         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void	*monitoration(void *arg)
 	table = (t_table *)arg;
 	while (!all_threads_running(&table->table_mutex,
 			&table->nbr_running_threads, table->total_philos))
-		;
+		usleep(30);
 	while (!simulation_ended(table))
 	{
 		i = -1;
